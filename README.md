@@ -1,88 +1,70 @@
-# Tensorflow-Participation-Assignment
-# Group members
-Samuel Dushime and Willy Kalisa
+# MNIST Neural Network Model
 
-###  Commits
-![colab](screenshot/proof.JPG)
+This project demonstrates the creation, training, and evaluation of a neural network using TensorFlow and the MNIST dataset. The MNIST dataset is a collection of 28x28 grayscale images of handwritten digits (0-9) with corresponding labels.
 
-# MNIST Handwritten Digit Classification
+## Features
+- Loading and preprocessing the MNIST dataset.
+- Building a neural network with:
+  - An input layer.
+  - Two hidden layers (128 and 64 neurons, respectively).
+  - An output layer with 10 neurons (one for each digit class).
+- Training the model using the Adam optimizer and categorical cross-entropy loss.
+- Evaluating the model's performance on a test dataset.
+- Visualizing the training and validation accuracy/loss.
+- Saving and loading the trained model.
+- Making predictions on test data.
 
-This project demonstrates the training, evaluation, and saving of a neural network model for classifying handwritten digits from the MNIST dataset using TensorFlow and Keras.
+## Files
+- `mnist_model.ipynb`: The main notebook containing the code for loading data, building, training, and evaluating the neural network.
+- `mnist_model.h5`: The saved trained model file.
 
----
-
----
-
-## Project Overview
-This project utilizes a simple feedforward neural network to classify images of handwritten digits from the MNIST dataset. The model is trained to achieve high accuracy on both training and validation datasets and is capable of predicting the class of new handwritten digits.
-
-## Dataset
-The MNIST dataset is a standard dataset for image classification, containing 70,000 grayscale images of handwritten digits (28x28 pixels) divided into:
-- **Training set**: 60,000 images
-- **Test set**: 10,000 images
-
-## Preprocessing
-1. **Normalization**: Pixel values are normalized to the range [0, 1] by dividing by 255.0.
-2. **Flattening**: Each 28x28 image is reshaped into a vector of 784 features.
-3. **One-Hot Encoding**: Labels are converted to one-hot encoded vectors for multi-class classification.
-
-## Model Architecture
-The model is a sequential neural network with the following layers:
-1. **Dense Layer**: 128 neurons, ReLU activation, input shape of 784.
-2. **Output Layer**: 10 neurons (one for each class), softmax activation.
-
-
-## Training
-The model is trained using the `fit` method for 10 epochs with the following parameters:
-- Training data: 60,000 images
-- Validation data: 10,000 images
-- Batch size: Default (32)
-
-### Training Output:
-```plaintext
-Epoch 1/10
-Accuracy: 87.79%, Loss: 0.4327
-Validation Accuracy: 96.07%, Validation Loss: 0.1307
-...
-Epoch 10/10
-Accuracy: 99.59%, Loss: 0.0141
-Validation Accuracy: 97.82%, Validation Loss: 0.0777
-```
-
-## Evaluation
-The model achieves a validation accuracy of **97.82%**, demonstrating strong performance on unseen data.
-
-## Saving and Loading the Model
-The trained model is saved as an HDF5 file:
-```python
-model.save('mnist_model.h5')
-```
-To reload and use the model:
-```python
-loaded_model = tf.keras.models.load_model('mnist_model.h5')
-```
-
-## Results
-The model was tested on unseen data and accurately classified digits. For example, testing the first image in the test set resulted in:
-- **Predicted class**: 7
-
-## How to Run
-1. Clone this repository or download the script.
-2. Ensure all dependencies are installed (see below).
-3. Run the script to train the model:
-   ```bash
-   python mnist_model.py
-   ```
-4. Evaluate the model and make predictions using the saved model.
-
-## Dependencies
-- Python 3.x
+## Requirements
+The project requires the following Python libraries:
 - TensorFlow
 - NumPy
+- Matplotlib
+- Pandas
 
-To install the dependencies, run:
+To install the required libraries, run:
 ```bash
 pip install tensorflow numpy matplotlib pandas
 ```
 
----
+## Usage
+1. Clone this repository to your local machine.
+2. Open the `mnist_model.ipynb` notebook in Jupyter Notebook or any compatible editor.
+3. Run all cells in the notebook to:
+   - Load and preprocess the MNIST dataset.
+   - Build and train the model.
+   - Save and load the model.
+   - Evaluate and visualize the model's performance.
+
+## Model Architecture
+- **Input Layer:** Flattened input of size 784 (28x28).
+- **Hidden Layer 1:** Dense layer with 128 neurons and ReLU activation.
+- **Hidden Layer 2:** Dense layer with 64 neurons and ReLU activation.
+- **Output Layer:** Dense layer with 10 neurons and Softmax activation.
+
+## Results
+The model achieves a high accuracy on the MNIST test dataset, showcasing its ability to classify handwritten digits effectively. Detailed training and validation metrics are visualized in the notebook.
+
+## Visualization
+The notebook includes plots for:
+- Training and validation accuracy over epochs.
+- Training and validation loss over epochs.
+
+## License
+This project is open-source and available under the MIT License.
+
+## Author
+Developed by Samuel Dushime and Willy Kalisa
+
+##  Commits
+![colab](proof.JPG)
+
+
+
+For any questions or suggestions, please feel free to reach out!
+
+
+
