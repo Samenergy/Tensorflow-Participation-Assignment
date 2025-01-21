@@ -15,8 +15,7 @@ This project demonstrates the creation, training, and evaluation of a neural net
 - Making predictions on test data.
 
 ## Files
-- `mnist_model.ipynb`: The main notebook containing the code for loading data, building, training, and evaluating the neural network.
-- `mnist_model.h5`: The saved trained model file.
+- `Tensorflow_Participation_Assignment_Assignment.ipynb`: The main notebook containing the code for loading data, building, training, and evaluating the neural network.
 
 ## Requirements
 The project requires the following Python libraries:
